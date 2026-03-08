@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>مطبخ أم المغرب 🇲🇦</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --primary:#C8401A;
+  --primary-dark:#a33214;
+  --primary-light:#e8603a;
+  --gold:#D4A017;
+  --gold-light:#F5C842;
+  --green:#2A7A3B;
+  --cream:#FDF6EC;
+  --dark:#1C1008;
+  --dark2:#2E1A0E;
+  --surface:#FFFFFF;
+  --border:#F0E6D3;
+  --text:#1C1008;
+  --muted:#8B6B4A;
+  --radius:16px;
+  --shadow:0 4px 24px rgba(28,16,8,0.1);
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font-family:inherit}
+img{max-width:100%;display:block}
+
+/* ══ HEADER ══ */
+header{
+  position:sticky;top:0;z-index:100;
+  background:var(--dark);
+  padding:0 20px;
+  box-shadow:0 2px 20px rgba(0,0,0,0.4);
+}
+nav{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  height:68px;gap:16px;
+}
+.logo{
+  display:flex;align-items:center;gap:10px;
+  font-size:20px;font-weight:900;color:white;
+  white-space:nowrap;
+}
+.logo-icon{font-size:28px}
+.logo span{color:var(--gold-light)}
+
+.search-bar{
+  flex:1;max-width:380px;
+  display:flex;align-items:center;
+  background:rgba(255,255,255,0.08);
+  border-radius:50px;padding:0 16px;gap:8px;
+  border:1px solid rgba(255,255,255,0.12);
+  transition:.3s;
+}
+.search-bar:focus-within{border-color:var(--gold);background:rgba(255,255,255,0.12)}
+.search-bar input{
+  flex:1;background:none;border:none;outline:none;
+  color:white;font-family:inherit;font-size:14px;padding:10px 0;
+}
+.search-bar input::placeholder{color:rgba(255,255,255,0.35)}
+
+.nav-actions{display:flex;align-items:center;gap:6px}
+.nav-btn{
+  position:relative;background:none;border:none;
+  color:white;font-size:22px;padding:8px;
+  border-radius:10px;transition:background .2s;
+}
+.nav-btn:hover{background:rgba(255,255,255,0.1)}
+.badge{
+  position:absolute;top:2px;right:2px;
+  background:var(--primary);color:white;
+  font-size:9px;font-weight:700;
+  min-width:16px;height:16px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  border:2px solid var(--dark);
+}
+
+/* ══ HERO ══ */
+.hero{
+  background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 60%,#3D1F0A 100%);
+  padding:70px 20px 80px;
+  text-align:center;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 40%,rgba(200,64,26,0.2) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 50% at 20% 70%,rgba(212,160,23,0.12) 0%,transparent 60%);
+}
+.hero-pattern{
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-inner{position:relative;max-width:680px;margin:0 auto;animation:fadeUp .8s ease both}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(212,160,23,0.15);
+  border:1px solid rgba(212,160,23,0.35);
+  color:var(--gold-light);
+  font-size:13px;font-weight:700;
+  padding:8px 20px;border-radius:50px;
+  margin-bottom:24px;
+}
+
+.hero h1{
+  font-size:clamp(36px,9vw,72px);
+  font-weight:900;color:white;
+  line-height:1.05;margin-bottom:8px;
+}
+.hero h1 .ar-gold{color:var(--gold-light)}
+.hero h1 .fr-sub{
+  display:block;
+  font-size:clamp(18px,4vw,32px);
+  color:rgba(255,255,255,0.5);
+  font-weight:600;margin-top:8px;
+}
+
+.hero-desc{
+  font-size:16px;color:rgba(255,255,255,0.6);
+  margin:20px 0 36px;line-height:1.8;
+}
+
+.hero-tags{
+  display:flex;flex-wrap:wrap;gap:8px;
+  justify-content:center;margin-bottom:36px;
+}
+.hero-tag{
+  background:rgba(255,255,255,0.08);
+  color:rgba(255,255,255,0.75);
+  border:1px solid rgba(255,255,255,0.12);
+  padding:6px 14px;border-radius:50px;
+  font-size:13px;
+}
+
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{
+  background:var(--primary);color:white;border:none;
+  padding:15px 36px;border-radius:50px;
+  font-size:16px;font-weight:700;font-family:inherit;
+  transition:.3s;display:flex;align-items:center;gap:8px;
+}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(200,64,26,0.45)}
+.btn-outline{
+  background:transparent;color:white;
+  border:2px solid rgba(255,255,255,0.25);
+  padding:15px 36px;border-radius:50px;
+  font-size:16px;font-weight:700;font-family:inherit;transition:.3s;
+}
+.btn-outline:hover{border-color:var(--gold-light);color:var(--gold-light)}
+
+/* delivery banner */
+.delivery-bar{
+  background:var(--green);
+  padding:14px 20px;text-align:center;
+  font-size:14px;font-weight:700;color:white;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+
+/* ══ SECTION ══ */
+.section{max-width:1100px;margin:0 auto;padding:52px 20px}
+.section-header{
+  display:flex;align-items:center;
+  justify-content:space-between;margin-bottom:32px;
+}
+.section-title{font-size:24px;font-weight:900}
+.section-title span{color:var(--primary)}
+.section-sub{font-size:13px;color:var(--muted);margin-top:4px}
+
+/* ══ CATEGORIES ══ */
+.cats-scroll{
+  display:flex;gap:10px;overflow-x:auto;
+  padding-bottom:8px;scrollbar-width:none;
+}
+.cats-scroll::-webkit-scrollbar{display:none}
+.cat-pill{
+  display:flex;align-items:center;gap:8px;
+  background:white;border:2px solid var(--border);
+  border-radius:50px;padding:10px 20px;
+  white-space:nowrap;cursor:pointer;
+  font-size:14px;font-weight:700;color:var(--muted);
+  transition:.25s;flex-shrink:0;
+}
+.cat-pill:hover{border-color:var(--primary);color:var(--primary)}
+.cat-pill.active{background:var(--primary);border-color:var(--primary);color:white}
+.cat-pill .cat-em{font-size:18px}
+
+/* ══ PROMO ══ */
+.promo-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;margin-bottom:0;
+}
+@media(max-width:600px){.promo-grid{grid-template-columns:1fr}}
+
+.promo-card{
+  border-radius:20px;padding:28px 24px;
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:space-between;
+  min-height:160px;
+}
+.promo-card.red{background:linear-gradient(135deg,#C8401A,#8B2B10)}
+.promo-card.gold{background:linear-gradient(135deg,#D4A017,#8B6B00)}
+.promo-card h3{font-size:20px;font-weight:900;color:white;margin-bottom:6px}
+.promo-card p{font-size:13px;color:rgba(255,255,255,0.7)}
+.promo-card .promo-big{
+  position:absolute;right:-10px;bottom:-10px;
+  font-size:80px;opacity:.2;
+}
+.promo-btn{
+  display:inline-block;margin-top:16px;
+  background:rgba(255,255,255,0.2);color:white;
+  border:1px solid rgba(255,255,255,0.3);
+  padding:8px 18px;border-radius:50px;
+  font-size:13px;font-weight:700;font-family:inherit;
+  border-style:solid;cursor:pointer;transition:.2s;
+}
+.promo-btn:hover{background:rgba(255,255,255,0.3)}
+
+/* ══ PRODUCTS ══ */
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:20px;
+}
+
+.product-card{
+  background:white;border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);
+  transition:.3s;border:1px solid var(--border);
+  position:relative;
+}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(200,64,26,0.15)}
+
+.product-img{
+  position:relative;
+  aspect-ratio:4/3;
+  background:linear-gradient(135deg,#FFF3E0,#FFE0C0);
+  display:flex;align-items:center;justify-content:center;
+  font-size:72px;overflow:hidden;
+}
+.product-img img{
+  width:100%;height:100%;
+  object-fit:cover;position:absolute;inset:0;
+}
+
+.product-badge{
+  position:absolute;top:12px;right:12px;
+  font-size:11px;font-weight:700;
+  padding:4px 10px;border-radius:50px;color:white;
+}
+.badge-popular{background:var(--primary)}
+.badge-new{background:var(--green)}
+.badge-special{background:var(--gold);color:var(--dark)}
+
+.wishlist-btn{
+  position:absolute;top:12px;left:12px;
+  background:white;border:none;
+  width:36px;height:36px;border-radius:50%;
+  font-size:16px;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 8px rgba(0,0,0,0.15);
+  transition:.2s;opacity:0;
+}
+.product-card:hover .wishlist-btn{opacity:1}
+
+.product-info{padding:18px}
+.product-cat{
+  font-size:11px;font-weight:700;
+  color:var(--muted);text-transform:uppercase;
+  letter-spacing:.08em;margin-bottom:6px;
+}
+.product-name{
+  font-size:18px;font-weight:900;
+  color:var(--dark);margin-bottom:6px;line-height:1.25;
+  letter-spacing:-0.01em;
+  background:linear-gradient(135deg, var(--dark) 0%, var(--primary-dark) 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.product-desc{
+  font-size:13px;color:var(--muted);
+  line-height:1.6;margin-bottom:12px;
+}
+
+.product-meta{
+  display:flex;align-items:center;gap:8px;
+  margin-bottom:14px;flex-wrap:wrap;
+}
+.meta-tag{
+  background:var(--cream);border:1px solid var(--border);
+  border-radius:50px;padding:3px 10px;
+  font-size:11px;color:var(--muted);
+}
+
+.product-footer{
+  display:flex;align-items:center;
+  justify-content:space-between;gap:8px;
+  border-top:1px solid var(--border);
+  padding-top:14px;
+}
+.price{font-size:22px;font-weight:900;color:var(--primary)}
+.price small{font-size:13px}
+
+.add-btn{
+  background:var(--primary);color:white;border:none;
+  padding:11px 20px;border-radius:10px;
+  font-size:14px;font-weight:700;
+  font-family:inherit;transition:.3s;
+  display:flex;align-items:center;gap:6px;
+}
+.add-btn:hover{background:var(--primary-dark);transform:scale(1.04)}
+.add-btn:active{transform:scale(.97)}
+
+/* ══ COLLECTIF SECTION ══ */
+.collectif{
+  background:linear-gradient(135deg,var(--dark),var(--dark2));
+  padding:64px 20px;color:white;
+}
+.collectif-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:48px;align-items:center;
+}
+@media(max-width:700px){.collectif-inner{grid-template-columns:1fr}}
+
+.collectif-text h2{
+  font-size:clamp(28px,6vw,48px);
+  font-weight:900;margin-bottom:16px;
+}
+.collectif-text h2 span{color:var(--gold-light)}
+.collectif-text p{
+  font-size:15px;color:rgba(255,255,255,0.6);
+  line-height:1.8;margin-bottom:28px;
+}
+.collectif-list{list-style:none;margin-bottom:32px}
+.collectif-list li{
+  display:flex;align-items:center;gap:12px;
+  font-size:14px;color:rgba(255,255,255,0.8);
+  margin-bottom:12px;
+}
+.collectif-list li::before{content:'✅';font-size:16px}
+
+.collectif-cards{display:flex;flex-direction:column;gap:14px}
+.collectif-card{
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:14px;padding:20px;
+  display:flex;align-items:center;gap:16px;
+}
+.collectif-card-icon{font-size:36px;flex-shrink:0}
+.collectif-card h4{font-size:15px;font-weight:700;margin-bottom:4px}
+.collectif-card p{font-size:12px;color:rgba(255,255,255,0.5)}
+
+/* ══ HOW IT WORKS ══ */
+.steps-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:24px;
+}
+.step{text-align:center;padding:32px 20px}
+.step-num{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--primary);color:white;
+  font-size:22px;font-weight:900;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;
+}
+.step-icon{font-size:36px;margin-bottom:12px}
+.step h3{font-size:16px;font-weight:700;margin-bottom:8px}
+.step p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* ══ FEATURES ══ */
+.features-bar{background:var(--dark);padding:40px 20px}
+.features-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:28px;
+}
+.feature{display:flex;align-items:center;gap:14px;color:white}
+.feature-icon{font-size:34px;flex-shrink:0}
+.feature h4{font-size:15px;font-weight:700;margin-bottom:3px}
+.feature p{font-size:12px;color:rgba(255,255,255,0.45)}
+
+/* ══ FOOTER ══ */
+footer{background:var(--dark2);color:white;padding:52px 20px 24px}
+.footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:36px;margin-bottom:40px;
+}
+.footer-col h4{font-size:15px;font-weight:700;margin-bottom:16px;color:var(--gold-light)}
+.footer-col ul{list-style:none}
+.footer-col li{font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:10px;cursor:pointer;transition:color .2s}
+.footer-col li:hover{color:var(--gold-light)}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:16px}
+.social-links{display:flex;gap:10px}
+.social-btn{
+  width:40px;height:40px;background:rgba(255,255,255,0.08);
+  border-radius:10px;border:none;color:white;font-size:18px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:.2s;
+}
+.social-btn:hover{background:var(--primary)}
+.footer-bottom{
+  max-width:1100px;margin:0 auto;
+  padding-top:24px;border-top:1px solid rgba(255,255,255,0.08);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,0.3)}
+
+/* ══ CART SIDEBAR ══ */
+.cart-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,0.6);
+  z-index:200;opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.cart-overlay.open{opacity:1;pointer-events:all}
+.cart-sidebar{
+  position:fixed;top:0;left:0;
+  width:min(400px,100vw);height:100vh;
+  background:white;z-index:201;
+  display:flex;flex-direction:column;
+  transform:translateX(-100%);
+  transition:transform .35s cubic-bezier(.4,0,.2,1);
+  box-shadow:4px 0 40px rgba(0,0,0,0.2);
+}
+.cart-sidebar.open{transform:translateX(0)}
+.cart-header{
+  padding:20px 24px;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--dark);
+}
+.cart-header h3{font-size:18px;font-weight:900;color:white}
+.cart-close{
+  background:rgba(255,255,255,0.1);border:none;
+  font-size:18px;cursor:pointer;color:white;
+  width:36px;height:36px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;transition:.2s;
+}
+.cart-close:hover{background:var(--primary)}
+.cart-items{flex:1;overflow-y:auto;padding:16px 20px}
+.cart-empty{text-align:center;padding:60px 20px;color:var(--muted)}
+.cart-empty .empty-icon{font-size:64px;margin-bottom:16px}
+.cart-empty p{font-size:15px}
+.cart-item{
+  display:flex;gap:14px;padding:14px 0;
+  border-bottom:1px solid var(--border);align-items:center;
+}
+.cart-item-img{
+  width:68px;height:68px;
+  background:linear-gradient(135deg,#FFF3E0,#FFE0C0);
+  border-radius:12px;display:flex;align-items:center;
+  justify-content:center;font-size:34px;flex-shrink:0;
+}
+.cart-item-info{flex:1}
+.cart-item-name{font-size:14px;font-weight:700;margin-bottom:4px}
+.cart-item-qty{font-size:12px;color:var(--muted);margin-bottom:4px}
+.cart-item-price{font-size:16px;font-weight:900;color:var(--primary)}
+.cart-item-remove{
+  background:none;border:none;color:var(--muted);
+  font-size:18px;cursor:pointer;padding:4px;transition:color .2s;
+}
+.cart-item-remove:hover{color:var(--primary)}
+.cart-footer{padding:20px;border-top:2px solid var(--border)}
+.cart-total{
+  display:flex;justify-content:space-between;
+  align-items:center;margin-bottom:8px;
+}
+.cart-total span{font-size:14px;color:var(--muted)}
+.cart-total strong{font-size:24px;font-weight:900;color:var(--primary)}
+.delivery-note{
+  font-size:12px;color:var(--green);font-weight:700;
+  text-align:center;margin-bottom:14px;
+}
+.checkout-btn{
+  width:100%;padding:16px;
+  background:var(--primary);color:white;border:none;
+  border-radius:var(--radius);font-size:16px;font-weight:700;
+  font-family:inherit;cursor:pointer;transition:.3s;
+}
+.checkout-btn:hover{background:var(--primary-dark)}
+
+/* ══ TOAST ══ */
+.toast{
+  position:fixed;bottom:24px;left:50%;
+  transform:translateX(-50%) translateY(100px);
+  background:var(--dark);color:white;
+  padding:14px 24px;border-radius:50px;
+  font-size:14px;font-weight:700;z-index:300;
+  display:flex;align-items:center;gap:10px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.3);
+  transition:transform .4s cubic-bezier(.4,0,.2,1);
+  white-space:nowrap;max-width:90vw;
+}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ══ WHATSAPP ══ */
+.whatsapp-fab{
+  position:fixed;bottom:24px;right:24px;z-index:150;
+  width:58px;height:58px;border-radius:50%;
+  background:#25D366;border:none;color:white;
+  font-size:28px;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,0.5);
+  cursor:pointer;transition:.3s;animation:pulse 2s infinite;
+}
+.whatsapp-fab:hover{transform:scale(1.1)}
+@keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.5)}50%{box-shadow:0 4px 32px rgba(37,211,102,0.8)}}
+
+/* ══ ANIMATIONS ══ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:600px){
+  .search-bar{display:none}
+  .products-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .product-info{padding:12px}
+  .product-name{font-size:14px}
+  .price{font-size:18px}
+  .add-btn{padding:9px 14px;font-size:12px}
+  .promo-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- CART -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3>🛒 طلبك</h3>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty"><div class="empty-icon">🍽️</div><p>السلة فارغة — اختار طبقك!</p></div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total"><span>المجموع</span><strong id="cartTotal">0 درهم</strong></div>
+    <div class="delivery-note">🚴 التوصيل مجاني لجميع الطلبات!</div>
+    <button class="checkout-btn" onclick="checkout()">🚀 اطلب دابا عبر WhatsApp</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><span id="toastIcon">✅</span><span id="toastMsg">تم الإضافة!</span></div>
+
+<!-- WHATSAPP -->
+<button class="whatsapp-fab" onclick="openWhatsapp()" title="تواصل معنا">💬</button>
+
+<!-- HEADER -->
+<header>
+  <nav>
+    <div class="logo">
+      <span class="logo-icon">🍽️</span>
+      <div>مطبخ <span>أم المغرب</span></div>
+    </div>
+    <div class="search-bar">
+      <span>🔍</span>
+      <input type="text" placeholder="ابحث على طبقك المفضل..." oninput="filterProducts(this.value)"/>
+    </div>
+    <div class="nav-actions">
+      <button class="nav-btn" onclick="toggleCart()">
+        🛒<span class="badge" id="cartBadge" style="display:none">0</span>
+      </button>
+      <button class="nav-btn">👤</button>
+    </div>
+  </nav>
+</header>
+
+<!-- DELIVERY BAR -->
+<div class="delivery-bar">
+  🚴 التوصيل مجاني — Livraison GRATUITE لجميع الطلبات 🇲🇦
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">🇲🇦 أكل مغربي أصيل — طبيعي 100% منزلي</div>
+    <h1>
+      مطبخ <span class="ar-gold">أم المغرب</span>
+      <span class="fr-sub">Cuisine Marocaine Authentique</span>
+    </h1>
+    <p class="hero-desc">
+      طعام مغربي أصيل من مواد طبيعية وصحية — مطبوخ بالحنان والحب 💚<br/>
+      توصيل مجاني لباب الدار
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">📍 أكادير</span>
+      <span class="hero-tag">🌿 طبيعي 100%</span>
+      <span class="hero-tag">🏠 منزلي</span>
+      <span class="hero-tag">🚴 توصيل مجاني</span>
+      <span class="hero-tag">🏢 Restauration Collective</span>
+      <span class="hero-tag">⏱️ طازج يومياً</span>
+    </div>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
+        🍽️ اطلب دابا
+      </button>
+      <button class="btn-outline" onclick="document.getElementById('collectif').scrollIntoView({behavior:'smooth'})">
+        🏢 Restauration Collective
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<div class="section" style="padding-bottom:0">
+  <div class="cats-scroll" id="catFilter">
+    <div class="cat-pill active" onclick="filterCat('all',this)"><span class="cat-em">🍽️</span> الكل</div>
+    <div class="cat-pill" onclick="filterCat('طواجن',this)"><span class="cat-em">🫕</span> طواجن</div>
+    <div class="cat-pill" onclick="filterCat('أطباق يومية',this)"><span class="cat-em">🥘</span> أطباق يومية</div>
+    <div class="cat-pill" onclick="filterCat('دجاج',this)"><span class="cat-em">🍗</span> دجاج</div>
+    <div class="cat-pill" onclick="filterCat('حوت',this)"><span class="cat-em">🐟</span> حوت</div>
+    <div class="cat-pill" onclick="filterCat('خبز وفطور',this)"><span class="cat-em">🥞</span> خبز وفطور</div>
+    <div class="cat-pill" onclick="filterCat('كسكس وسفة',this)"><span class="cat-em">🫙</span> كسكس وسفة</div>
+    <div class="cat-pill" onclick="filterCat('سلطات',this)"><span class="cat-em">🥗</span> سلطات</div>
+  </div>
+</div>
+
+<!-- PROMOS -->
+<div class="section" style="padding-top:32px;padding-bottom:0">
+  <div class="promo-grid">
+    <div class="promo-card red">
+      <div>
+        <h3>🔥 طبق اليوم</h3>
+        <p>تقلية طايبة بالطريقة المغربية الأصيلة</p>
+        <button class="promo-btn" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">اطلب دابا ←</button>
+      </div>
+      <span class="promo-big">🍳</span>
+    </div>
+    <div class="promo-card gold">
+      <div>
+        <h3>🏢 للشركات والمدارس</h3>
+        <p>Restauration Collective — عروض خاصة للجماعات</p>
+        <button class="promo-btn" onclick="document.getElementById('collectif').scrollIntoView({behavior:'smooth'})">اعرف أكثر ←</button>
+      </div>
+      <span class="promo-big">🏢</span>
+    </div>
+  </div>
+</div>
+
+<!-- MENU -->
+<div class="section" id="menu">
+  <div class="section-header">
+    <div>
+      <h2 class="section-title">قائمة الطعام <span>🍽️</span></h2>
+      <p class="section-sub">كل الأطباق مطبوخة يومياً من مواد طبيعية وصحية</p>
+    </div>
+  </div>
+  <div class="products-grid" id="productsGrid"></div>
+</div>
+
+<!-- COLLECTIF -->
+<div class="collectif" id="collectif">
+  <div class="collectif-inner">
+    <div class="collectif-text">
+      <h2>Restauration<br/><span>Collective 🏢</span></h2>
+      <p>خدمة الإطعام الجماعي للشركات والمدارس والمستشفيات والمناسبات — أكل مغربي أصيل بكميات كبيرة وبجودة عالية.</p>
+      <ul class="collectif-list">
+        <li>وجبات يومية للموظفين والطلاب</li>
+        <li>مناسبات وأعياد ميلاد وحفلات</li>
+        <li>توصيل في الوقت المحدد</li>
+        <li>أسعار خاصة للكميات الكبيرة</li>
+        <li>قائمة متنوعة كل يوم</li>
+        <li>مواد طبيعية وصحية 100%</li>
+      </ul>
+      <button class="btn-primary" onclick="openWhatsapp()">📞 تواصل معنا للعروض</button>
+    </div>
+    <div class="collectif-cards">
+      <div class="collectif-card">
+        <div class="collectif-card-icon">🏭</div>
+        <div><h4>الشركات والمصانع</h4><p>وجبات يومية للموظفين — من 10 إلى 500 شخص</p></div>
+      </div>
+      <div class="collectif-card">
+        <div class="collectif-card-icon">🏫</div>
+        <div><h4>المدارس والجامعات</h4><p>وجبات صحية للطلاب — أسعار مدروسة</p></div>
+      </div>
+      <div class="collectif-card">
+        <div class="collectif-card-icon">🎉</div>
+        <div><h4>المناسبات والحفلات</h4><p>أعراس وحفلات وعقيقة — أكل مغربي أصيل</p></div>
+      </div>
+      <div class="collectif-card">
+        <div class="collectif-card-icon">🏥</div>
+        <div><h4>المستشفيات والعيادات</h4><p>وجبات صحية ومتوازنة — يومياً</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="section">
+  <div class="section-header" style="justify-content:center;text-align:center">
+    <div>
+      <h2 class="section-title">كيفاش تطلب؟ <span>📱</span></h2>
+      <p class="section-sub">سهل وسريع — 3 خطوات فقط</p>
+    </div>
+  </div>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-icon">🍽️</div>
+      <div class="step-num">1</div>
+      <h3>اختار طبقك</h3>
+      <p>تصفح القائمة واختار الأطباق اللي بغيتي</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">📱</div>
+      <div class="step-num">2</div>
+      <h3>أضف للسلة</h3>
+      <p>حط الطلبية فالسلة وحدد الكمية</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">💬</div>
+      <div class="step-num">3</div>
+      <h3>اطلب عبر WhatsApp</h3>
+      <p>نرسلك الطلبية عبر WhatsApp ونتواصلو معاك</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">🚴</div>
+      <div class="step-num">4</div>
+      <h3>التوصيل لباب الدار</h3>
+      <p>نوصلو ليك الأكل طازج وساخن مجاناً 🎉</p>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="features-bar">
+  <div class="features-inner">
+    <div class="feature"><div class="feature-icon">🚴</div><div><h4>توصيل مجاني</h4><p>Livraison GRATUITE — لجميع الطلبات</p></div></div>
+    <div class="feature"><div class="feature-icon">🌿</div><div><h4>طبيعي 100%</h4><p>مواد طبيعية وصحية — بدون مواد حافظة</p></div></div>
+    <div class="feature"><div class="feature-icon">🏠</div><div><h4>طبخ منزلي</h4><p>مطبوخ بالحنان بالطريقة المغربية الأصيلة</p></div></div>
+    <div class="feature"><div class="feature-icon">⏱️</div><div><h4>طازج يومياً</h4><p>كل يوم طبخة جديدة وطازجة</p></div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col footer-brand">
+      <div class="logo" style="margin-bottom:12px">🍽️ مطبخ <span>أم المغرب</span></div>
+      <p>أكل مغربي أصيل وصحي — توصيل مجاني لباب الدار 🇲🇦</p>
+      <div class="social-links">
+        <button class="social-btn">📘</button>
+        <button class="social-btn">📸</button>
+        <button class="social-btn" onclick="openWhatsapp()">💬</button>
+        <button class="social-btn">▶️</button>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>القائمة</h4>
+      <ul>
+        <li>طواجن</li>
+        <li>أطباق يومية</li>
+        <li>دجاج</li>
+        <li>حوت</li>
+        <li>خبز وفطور</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>خدماتنا</h4>
+      <ul>
+        <li>توصيل منزلي مجاني</li>
+        <li>Restauration Collective</li>
+        <li>مناسبات وحفلات</li>
+        <li>طلبات خاصة</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>تواصل معنا</h4>
+      <ul>
+        <li>💬 WhatsApp: 0641-313-874</li>
+        <li>📍 أكادير، المغرب</li>
+        <li>⏰ كل يوم 8ص — 9م</li>
+        <li>🚴 توصيل مجاني</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 مطبخ أم المغرب — أكادير 🇲🇦</p>
+    <p>صنع بـ ❤️ فالمغرب</p>
+  </div>
+</footer>
+
+<script>
+// ══ DATA ══
+const allProducts = [
+  {id:1, name:'طبق التقلية الطايبة', cat:'أطباق يومية', icon:'🍳', desc:'تقلية مغربية أصيلة بالخضرة الطازجة والتوابل الطبيعية — وصفة منزلية', price:35, badge:'badge-popular', badgeLabel:'🔥 الأكثر طلباً', tags:['منزلي','طبيعي']},
+  {id:2, name:'طبق اللوبيا والعدس', cat:'أطباق يومية', icon:'🫘', desc:'لوبيا وعدس بالطريقة المغربية — غني بالبروتين وصحي 100%', price:30, badge:'badge-popular', badgeLabel:'💚 صحي', tags:['نباتي','صحي']},
+  {id:3, name:'طاجين الدجاج', cat:'طواجن', icon:'🫕', desc:'طاجين دجاج بالزيتون والليمون المصير — مطبوخ على نار هادية', price:55, badge:'badge-popular', badgeLabel:'⭐ الأفضل', tags:['طاجين','دجاج']},
+  {id:4, name:'طاجين اللحم', cat:'طواجن', icon:'🥩', desc:'طاجين لحم بالخضرة الموسمية والتوابل المغربية الأصيلة', price:70, badge:'', badgeLabel:'', tags:['طاجين','لحم']},
+  {id:5, name:'طاجين حوت الصنور', cat:'حوت', icon:'🐟', desc:'طاجين السمك بالشرمولة والخضرة — وصفة ساحلية أصيلة', price:65, badge:'badge-new', badgeLabel:'🆕 جديد', tags:['حوت','طاجين']},
+  {id:6, name:'مسمن معمر', cat:'خبز وفطور', icon:'🥞', desc:'مسمن مغربي معمر بالبصل والفلفل — طازج كل صباح', price:10, badge:'badge-popular', badgeLabel:'🌅 فطور', tags:['فطور','منزلي']},
+  {id:7, name:'طاجين السردين', cat:'حوت', icon:'🐠', desc:'طاجين السردين الطازج بالشرمولة والطماطم — طعم البحر فدارك', price:50, badge:'badge-special', badgeLabel:'🐟 موسمي', tags:['حوت','طاجين']},
+  {id:8, name:'الدجاج المحمر', cat:'دجاج', icon:'🍗', desc:'دجاج محمر بالتوابل المغربية — مقرمش من الخارج وطري من الداخل', price:60, badge:'badge-popular', badgeLabel:'🔥 رائج', tags:['دجاج','محمر']},
+  {id:9,  name:'رفيسة', cat:'أطباق يومية', icon:'🥘', desc:'رفيسة مغربية أصيلة بالدجاج والعدس والتوابل — طبق التراث', price:65, badge:'badge-special', badgeLabel:'🏆 تراثي', tags:['تراثي','منزلي']},
+  {id:10, name:'كسكس مغربي', cat:'كسكس وسفة', icon:'🫙', desc:'كسكس بالخضرة والدجاج أو اللحم — طبق الجمعة الأصيل', price:55, badge:'badge-popular', badgeLabel:'⭐ طبق الجمعة', tags:['تراثي','منزلي']},
+  {id:11, name:'بداز', cat:'أطباق يومية', icon:'🫕', desc:'بداز مغربي بالبيض والزيت — فطور أصيل وشبعة كاملة', price:25, badge:'badge-new', badgeLabel:'🆕 جديد', tags:['فطور','منزلي']},
+  {id:12, name:'سلطة مغربية', cat:'سلطات', icon:'🥗', desc:'سلطة طازجة بالطماطم والفلفل والخضرة — خفيفة وصحية 100%', price:20, badge:'badge-new', badgeLabel:'💚 صحي', tags:['نباتي','صحي']},
+  {id:13, name:'بطبوط معمر', cat:'خبز وفطور', icon:'🫓', desc:'بطبوط معمر بالبصل والفلفل والجبن — طازج من الفرن مباشرة', price:12, badge:'badge-popular', badgeLabel:'🔥 رائج', tags:['فطور','منزلي']},
+  {id:14, name:'خبز بلدي', cat:'خبز وفطور', icon:'🍞', desc:'خبز بلدي مغربي من دقيق طبيعي — طازج كل يوم من الصباح', price:5, badge:'badge-new', badgeLabel:'🌾 طبيعي', tags:['فطور','طبيعي']},
+  {id:15, name:'السفة المغربية', cat:'كسكس وسفة', icon:'🍮', desc:'سفة بالسكر وماء الزهر واللوز — حلوى تراثية للمناسبات والأعياد', price:40, badge:'badge-special', badgeLabel:'🏆 تراثي', tags:['تراثي','حلويات']},
+];
+
+let cart = [];
+let currentCat = 'all';
+let searchQ = '';
+
+function renderProducts(list) {
+  const grid = document.getElementById('productsGrid');
+  if(!list.length){
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)"><div style="font-size:60px;margin-bottom:16px">🔍</div><p style="font-size:16px">ما لقيناش هاد الطبق — جرب كلمة أخرى</p></div>`;
+    return;
+  }
+  grid.innerHTML = list.map(p=>`
+    <div class="product-card">
+      <div class="product-img">
+        ${p.icon}
+        ${p.badge?`<span class="product-badge ${p.badge}">${p.badgeLabel}</span>`:''}
+        <button class="wishlist-btn">❤️</button>
+      </div>
+      <div class="product-info">
+        <div class="product-cat">${p.cat}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-desc">${p.desc}</div>
+        <div class="product-meta">
+          ${p.tags.map(t=>`<span class="meta-tag">✓ ${t}</span>`).join('')}
+        </div>
+        <div class="product-footer">
+          <div class="price">${p.price}<small> درهم</small></div>
+          <button class="add-btn" onclick="addToCart(${p.id})">+ اضف 🛒</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function getFiltered(){
+  return allProducts.filter(p=>{
+    const catOk = currentCat==='all' || p.cat===currentCat || p.tags.includes(currentCat);
+    const searchOk = !searchQ || p.name.includes(searchQ) || p.desc.includes(searchQ) || p.cat.includes(searchQ);
+    return catOk && searchOk;
+  });
+}
+
+function filterCat(cat, btn){
+  currentCat = cat;
+  document.querySelectorAll('.cat-pill').forEach(c=>c.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts(getFiltered());
+}
+
+function filterProducts(q){
+  searchQ = q;
+  renderProducts(getFiltered());
+}
+
+// ══ CART ══
+function addToCart(id){
+  const p = allProducts.find(x=>x.id===id);
+  const ex = cart.find(x=>x.id===id);
+  if(ex) ex.qty++;
+  else cart.push({...p, qty:1});
+  updateCart();
+  showToast('✅', `تم إضافة "${p.name}"!`);
+}
+
+function removeFromCart(id){
+  cart = cart.filter(x=>x.id!==id);
+  updateCart();
+}
+
+function updateCart(){
+  const total = cart.reduce((s,x)=>s+x.qty,0);
+  const badge = document.getElementById('cartBadge');
+  badge.textContent = total;
+  badge.style.display = total>0?'flex':'none';
+
+  const el = document.getElementById('cartItems');
+  if(!cart.length){
+    el.innerHTML=`<div class="cart-empty"><div class="empty-icon">🍽️</div><p>السلة فارغة — اختار طبقك!</p></div>`;
+  } else {
+    el.innerHTML = cart.map(item=>`
+      <div class="cart-item">
+        <div class="cart-item-img">${item.icon}</div>
+        <div class="cart-item-info">
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-qty">الكمية: ${item.qty}</div>
+          <div class="cart-item-price">${item.price*item.qty} درهم</div>
+        </div>
+        <button class="cart-item-remove" onclick="removeFromCart(${item.id})">🗑️</button>
+      </div>
+    `).join('');
+  }
+  const sum = cart.reduce((s,x)=>s+x.price*x.qty,0);
+  document.getElementById('cartTotal').textContent = sum+' درهم';
+}
+
+function toggleCart(){
+  document.getElementById('cartSidebar').classList.toggle('open');
+  document.getElementById('cartOverlay').classList.toggle('open');
+}
+
+function checkout(){
+  if(!cart.length){showToast('⚠️','السلة فارغة!');return;}
+  const msg = cart.map(i=>`• ${i.name} × ${i.qty} = ${i.price*i.qty} درهم`).join('\n');
+  const total = cart.reduce((s,x)=>s+x.price*x.qty,0);
+  const text = encodeURIComponent(`🍽️ طلب جديد من مطبخ أم المغرب:\n\n${msg}\n\n💰 المجموع: ${total} درهم\n🚴 التوصيل مجاني\n\nعطيني العنوان ديالك من فضلك!`);
+  window.open(`https://wa.me/212641313874?text=${text}`,'_blank');
+  cart=[];
+  updateCart();
+  toggleCart();
+}
+
+function openWhatsapp(){
+  window.open('https://wa.me/212641313874?text=السلام عليكم، بغيت نطلب من مطبخ أم المغرب 🍽️','_blank');
+}
+
+let toastTimer;
+function showToast(icon,msg){
+  document.getElementById('toastIcon').textContent=icon;
+  document.getElementById('toastMsg').textContent=msg;
+  const t=document.getElementById('toast');
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+// INIT
+renderProducts(getFiltered());
+</script>
+</body>
+</html>
