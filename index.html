@@ -793,21 +793,21 @@ footer{background:var(--dark2);color:white;padding:52px 20px 24px}
 <script>
 // ══ DATA ══
 const allProducts = [
-  {id:1, name:'طبق التقلية الطايبة', cat:'أطباق يومية', icon:'🍳', desc:'تقلية مغربية أصيلة بالخضرة الطازجة والتوابل الطبيعية — وصفة منزلية', price:35, badge:'badge-popular', badgeLabel:'🔥 الأكثر طلباً', tags:['منزلي','طبيعي']},
-  {id:2, name:'طبق اللوبيا والعدس', cat:'أطباق يومية', icon:'🫘', desc:'لوبيا وعدس بالطريقة المغربية — غني بالبروتين وصحي 100%', price:30, badge:'badge-popular', badgeLabel:'💚 صحي', tags:['نباتي','صحي']},
-  {id:3, name:'طاجين الدجاج', cat:'طواجن', icon:'🫕', desc:'طاجين دجاج بالزيتون والليمون المصير — مطبوخ على نار هادية', price:55, badge:'badge-popular', badgeLabel:'⭐ الأفضل', tags:['طاجين','دجاج']},
-  {id:4, name:'طاجين اللحم', cat:'طواجن', icon:'🥩', desc:'طاجين لحم بالخضرة الموسمية والتوابل المغربية الأصيلة', price:70, badge:'', badgeLabel:'', tags:['طاجين','لحم']},
-  {id:5, name:'طاجين حوت الصنور', cat:'حوت', icon:'🐟', desc:'طاجين السمك بالشرمولة والخضرة — وصفة ساحلية أصيلة', price:65, badge:'badge-new', badgeLabel:'🆕 جديد', tags:['حوت','طاجين']},
-  {id:6, name:'مسمن معمر', cat:'خبز وفطور', icon:'🥞', desc:'مسمن مغربي معمر بالبصل والفلفل — طازج كل صباح', price:10, badge:'badge-popular', badgeLabel:'🌅 فطور', tags:['فطور','منزلي']},
-  {id:7, name:'طاجين السردين', cat:'حوت', icon:'🐠', desc:'طاجين السردين الطازج بالشرمولة والطماطم — طعم البحر فدارك', price:50, badge:'badge-special', badgeLabel:'🐟 موسمي', tags:['حوت','طاجين']},
-  {id:8, name:'الدجاج المحمر', cat:'دجاج', icon:'🍗', desc:'دجاج محمر بالتوابل المغربية — مقرمش من الخارج وطري من الداخل', price:60, badge:'badge-popular', badgeLabel:'🔥 رائج', tags:['دجاج','محمر']},
-  {id:9,  name:'رفيسة', cat:'أطباق يومية', icon:'🥘', desc:'رفيسة مغربية أصيلة بالدجاج والعدس والتوابل — طبق التراث', price:65, badge:'badge-special', badgeLabel:'🏆 تراثي', tags:['تراثي','منزلي']},
-  {id:10, name:'كسكس مغربي', cat:'كسكس وسفة', icon:'🫙', desc:'كسكس بالخضرة والدجاج أو اللحم — طبق الجمعة الأصيل', price:55, badge:'badge-popular', badgeLabel:'⭐ طبق الجمعة', tags:['تراثي','منزلي']},
-  {id:11, name:'بداز', cat:'أطباق يومية', icon:'🫕', desc:'بداز مغربي بالبيض والزيت — فطور أصيل وشبعة كاملة', price:25, badge:'badge-new', badgeLabel:'🆕 جديد', tags:['فطور','منزلي']},
-  {id:12, name:'سلطة مغربية', cat:'سلطات', icon:'🥗', desc:'سلطة طازجة بالطماطم والفلفل والخضرة — خفيفة وصحية 100%', price:20, badge:'badge-new', badgeLabel:'💚 صحي', tags:['نباتي','صحي']},
-  {id:13, name:'بطبوط معمر', cat:'خبز وفطور', icon:'🫓', desc:'بطبوط معمر بالبصل والفلفل والجبن — طازج من الفرن مباشرة', price:12, badge:'badge-popular', badgeLabel:'🔥 رائج', tags:['فطور','منزلي']},
-  {id:14, name:'خبز بلدي', cat:'خبز وفطور', icon:'🍞', desc:'خبز بلدي مغربي من دقيق طبيعي — طازج كل يوم من الصباح', price:5, badge:'badge-new', badgeLabel:'🌾 طبيعي', tags:['فطور','طبيعي']},
-  {id:15, name:'السفة المغربية', cat:'كسكس وسفة', icon:'🍮', desc:'سفة بالسكر وماء الزهر واللوز — حلوى تراثية للمناسبات والأعياد', price:40, badge:'badge-special', badgeLabel:'🏆 تراثي', tags:['تراثي','حلويات']},
+  {id:1,  name:'طبق التقلية',      cat:'أطباق يومية',  icon:'🍳', img:'https://res.cloudinary.com/dacitrbgt/image/upload/v1773008383/images_zdbeiq.jpg',                                                                                                                                                                          desc:'تقلية مغربية أصيلة بالخضرة الطازجة والتوابل الطبيعية — وصفة منزلية',          price:15, badge:'badge-popular', badgeLabel:'🔥 الأكثر طلباً', tags:['منزلي','طبيعي']},
+  {id:2,  name:'طبق اللوبيا',      cat:'أطباق يومية',  icon:'🫘', img:'https://res.cloudinary.com/dacitrbgt/image/upload/v1773008345/images_3_cgd30d.jpg',                                                                                                                                                                           desc:'لوبيا بالطريقة المغربية — غني بالبروتين وصحي 100٪',                             price:13, badge:'badge-popular', badgeLabel:'💚 صحي',          tags:['نباتي','صحي']},
+  {id:3,  name:'طبق العدس',        cat:'أطباق يومية',  icon:'🥣', img:'https://res.cloudinary.com/dacitrbgt/image/upload/v1773008383/images_2_acbaq4.jpg',                                                                                                                                                                           desc:'عدس مغربي بالتوابل والزيت الزيتون — وجبة صحية وشبعة',                          price:10, badge:'badge-new',     badgeLabel:'💚 صحي',          tags:['نباتي','صحي']},
+  {id:4,  name:'السفة المغربية',   cat:'كسكس وسفة',    icon:'🫙', img:'https://res.cloudinary.com/dacitrbgt/image/upload/v1773008382/images_1_nhne6c.jpg',                                                                                                                                                                           desc:'سفة مغربية بالدجاج والزبيب والقرفة — حلو ومالح بنعم الله',                     price:20, badge:'badge-special', badgeLabel:'🏆 تراثي',         tags:['تراثي','منزلي']},
+  {id:5,  name:'الكسكس المغربي',   cat:'كسكس وسفة',    icon:'🥘', img:'https://res.cloudinary.com/dacitrbgt/image/upload/v1773008383/6cde5fef53dc59354799b19ad90658bd_w750_h500_tewqvm.jpg',                                                                                                                                         desc:'كسكس بالخضرة والدجاج أو اللحم — طبق الجمعة الأصيل',                            price:40, badge:'badge-popular', badgeLabel:'⭐ طبق الجمعة',    tags:['تراثي','منزلي']},
+  {id:6,  name:'الرفيسة العميا',   cat:'أطباق يومية',  icon:'🍲', img:'https://res.cloudinary.com/dacitrbgt/image/upload/v1773008345/%D8%B7%D8%B1%D9%8A%D9%82%D8%A9_%D8%B9%D9%85%D9%84_%D8%A7%D9%84%D8%B1%D9%81%D9%8A%D8%B3%D8%A9_%D8%A7%D9%84_620_103522_zgyuyy.jpg',                                                            desc:'رفيسة مغربية أصيلة بالدجاج والعدس والتوابل — طبق التراث',                      price:20, badge:'badge-special', badgeLabel:'🏆 تراثي',         tags:['تراثي','منزلي']},
+  {id:7,  name:'المروزية',         cat:'طواجن',         icon:'🍖', img:'https://res.cloudinary.com/dacitrbgt/image/upload/v1773008344/images_4_itshqd.jpg',                                                                                                                                                                           desc:'مروزية مغربية باللحم والعسل واللوز — طبق المناسبات الكبيرة',                   price:55, badge:'badge-special', badgeLabel:'🏆 تراثي',         tags:['طاجين','لحم']},
+  {id:8,  name:'طاجين الدجاج',     cat:'طواجن',         icon:'🫕', img:'https://res.cloudinary.com/dacitrbgt/image/upload/v1773008344/maxresdefault_t4tunz.jpg',                                                                                                                                                                      desc:'طاجين دجاج بالزيتون والليمون المصير — مطبوخ على نار هادية',                    price:30, badge:'badge-popular', badgeLabel:'⭐ الأفضل',         tags:['طاجين','دجاج']},
+  {id:9,  name:'خبز الدار',        cat:'خبز وفطور',     icon:'🍞', img:'https://res.cloudinary.com/dacitrbgt/image/upload/v1773008328/download_f9xsce.jpg',                                                                                                                                                                           desc:'خبز بلدي مغربي من دقيق طبيعي — طازج كل يوم من الصباح',                         price:5,  badge:'badge-new',     badgeLabel:'🌾 طبيعي',        tags:['فطور','طبيعي']},
+  {id:10, name:'الحريرة المغربية', cat:'أطباق يومية',  icon:'🥣', img:'https://res.cloudinary.com/dacitrbgt/image/upload/v1773008328/%D8%A7%D9%84%D8%AD%D8%B1%D9%8A%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A91_iv4ad1.jpg',                                                                                   desc:'حريرة مغربية أصيلة بالطماطم والعدس والكزبرة — دفا ونعمة',                      price:15, badge:'badge-popular', badgeLabel:'🔥 رائج',           tags:['فطور','منزلي']},
+  {id:11, name:'المسمن المغربي',   cat:'خبز وفطور',     icon:'🥞', img:'https://res.cloudinary.com/dacitrbgt/image/upload/v1773008328/images_6_stln7o.jpg',                                                                                                                                                                           desc:'مسمن مغربي معمر بالبصل والفلفل — طازج كل صباح',                                price:10, badge:'badge-popular', badgeLabel:'🌅 فطور',          tags:['فطور','منزلي']},
+  {id:12, name:'طاجين الحوت',      cat:'حوت',           icon:'🐟', img:'https://res.cloudinary.com/dacitrbgt/image/upload/v1773008327/images_8_lzodpq.jpg',                                                                                                                                                                           desc:'طاجين السمك بالشرمولة والخضرة — وصفة ساحلية أصيلة',                            price:40, badge:'badge-new',     badgeLabel:'🆕 جديد',         tags:['حوت','طاجين']},
+  {id:13, name:'طبق الكرعين',      cat:'أطباق يومية',  icon:'🦴', img:'https://res.cloudinary.com/dacitrbgt/image/upload/v1773008327/%D8%A7%D9%84%D8%B5%D9%88%D8%B1%D8%A9-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9-%D9%84%D9%88%D8%B5%D9%81%D8%A9%D8%A7%D9%84%D9%83%D8%B1%D8%B9%D9%8A%D9%86-%D8%A8%D8%A7%D9%84%D8%AD%D9%85%D8%B5_i2vhzw.jpg', desc:'كرعين بالحمص والتوابل — طبق شعبي ومغذي',                                        price:45, badge:'badge-special', badgeLabel:'💪 مغذي',          tags:['شعبي','منزلي']},
+  {id:14, name:'السردين مشوي',     cat:'حوت',           icon:'🐠', img:'https://res.cloudinary.com/dacitrbgt/image/upload/v1773008327/images_7_xdplfr.jpg',                                                                                                                                                                           desc:'سردين مشوي طازج بالشرمولة — من البحر لطبقك مباشرة',                            price:40, badge:'badge-popular', badgeLabel:'🐟 طازج',          tags:['حوت','مشوي']},
+  {id:15, name:'الدجاج الحمر',     cat:'طواجن',         icon:'🍗', img:'https://res.cloudinary.com/dacitrbgt/image/upload/v1773008344/e7a05fccba1573dfb7fc23520690e538_w750_h500_uyeag1.jpg',                                                                                                                                         desc:'دجاج محمر بالتوابل المغربية — مقرمش من الخارج وطري من الداخل',                  price:35, badge:'badge-popular', badgeLabel:'🔥 رائج',           tags:['دجاج','محمر']}
 ];
 
 let cart = [];
@@ -820,27 +820,12 @@ function renderProducts(list) {
     grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted)"><div style="font-size:60px;margin-bottom:16px">🔍</div><p style="font-size:16px">ما لقيناش هاد الطبق — جرب كلمة أخرى</p></div>`;
     return;
   }
-  grid.innerHTML = list.map(p=>`
-    <div class="product-card">
-      <div class="product-img">
-        ${p.icon}
-        ${p.badge?`<span class="product-badge ${p.badge}">${p.badgeLabel}</span>`:''}
-        <button class="wishlist-btn">❤️</button>
-      </div>
-      <div class="product-info">
-        <div class="product-cat">${p.cat}</div>
-        <div class="product-name">${p.name}</div>
-        <div class="product-desc">${p.desc}</div>
-        <div class="product-meta">
-          ${p.tags.map(t=>`<span class="meta-tag">✓ ${t}</span>`).join('')}
-        </div>
-        <div class="product-footer">
-          <div class="price">${p.price}<small> درهم</small></div>
-          <button class="add-btn" onclick="addToCart(${p.id})">+ اضف 🛒</button>
-        </div>
-      </div>
-    </div>
-  `).join('');
+  grid.innerHTML = list.map(p=>{
+    var imgHtml = p.img ? '<img src="'+p.img+'" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;border-radius:0">' : '';
+    var badgeHtml = p.badge ? '<span class="product-badge '+p.badge+'">'+p.badgeLabel+'</span>' : '';
+    var tagsHtml = p.tags.map(function(t){return '<span class="meta-tag">✓ '+t+'</span>';}).join('');
+    return '<div class="product-card"><div class="product-img">'+imgHtml+'<span style="font-size:72px">'+p.icon+'</span>'+badgeHtml+'<button class="wishlist-btn">❤️</button></div><div class="product-info"><div class="product-cat">'+p.cat+'</div><div class="product-name">'+p.name+'</div><div class="product-desc">'+p.desc+'</div><div class="product-meta">'+tagsHtml+'</div><div class="product-footer"><div class="price">'+p.price+'<small> درهم</small></div><button class="add-btn" onclick="addToCart('+p.id+')">+ اضف 🛒</button></div></div></div>';
+  }).join('');
 }
 
 function getFiltered(){
